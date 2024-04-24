@@ -7,13 +7,16 @@ import { AppComponent } from './app.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { HeroesListComponent } from './heroes-list/heroes-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { OpenCloseComponent } from './open-close/open-close.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrisisListComponent,
     HeroesListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    OpenCloseComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RouterLinkActive,
     RouterModule.forRoot(routes)
   ],
-  providers: [provideRouter(routes)],
+  providers: [
+    provideRouter(routes),
+    provideAnimations()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
